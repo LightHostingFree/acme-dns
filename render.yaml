@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: acme-dns
+    env: docker
+    plan: free
+    autoDeploy: true
+    disk:
+      name: acmedns_data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: ACMEDNS_DOMAIN
+        value: auth.example.com
